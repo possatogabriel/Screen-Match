@@ -3,10 +3,14 @@ package br.com.alura.cursos.screenmatch.modelos;
 import br.com.alura.cursos.screenmatch.partilhados.Classificavel;
 
 public class Episodio implements Classificavel {
-    private int numero;
     private String nome;
+    private int numero;
     private Serie serie;
     private int totalVisualizacoes;
+
+    public Episodio(String nome) {
+        this.setNome(nome);
+    }
 
     public int getTotalVisualizacoes() {
         return totalVisualizacoes;
@@ -41,7 +45,7 @@ public class Episodio implements Classificavel {
     }
 
     @Override
-    public int getClassificacao() {
+    public double getClassificacao() {
         if (totalVisualizacoes > 100) {
             return 4;
         } else {

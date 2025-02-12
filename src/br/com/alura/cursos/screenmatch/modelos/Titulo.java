@@ -1,12 +1,23 @@
 package br.com.alura.cursos.screenmatch.modelos;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
     private String nome;
     private int anoDeLancamento;
     private double somaAvaliacoes;
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
     private boolean incluidoNoPlano;
+
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public Titulo(TituloOMDB tituloOMDB) {
+        this.nome = tituloOMDB.title();
+        this.anoDeLancamento = Integer.valueOf(tituloOMDB.year());
+        this.duracaoEmMinutos = Integer.valueOf(tituloOMDB.runtime().substring(0, 3));
+    }
 
     public String getNome() {
         return nome;
@@ -26,14 +37,6 @@ public class Titulo {
 
     public int getTotalDeAvaliacoes() {
         return totalDeAvaliacoes;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setAnoDeLancamento(int anoDeLancamento) {
-        this.anoDeLancamento = anoDeLancamento;
     }
 
     public void setIncluidoNoPlano(boolean incluidoNoPlano) {
@@ -68,5 +71,15 @@ public class Titulo {
 
     public double retornaMedia() {
         return somaAvaliacoes / totalDeAvaliacoes;
+    }
+
+    @Override
+    public String toString() {
+        return this.getNome() + " (" + this.getAnoDeLancamento() + ") - " + this.getDuracaoEmMinutos() + " min";
+    }
+
+    @Override
+    public int compareTo(Titulo nomeDoOutroTitulo) {
+        return this.getNome().compareTo(nomeDoOutroTitulo.getNome());
     }
 }
