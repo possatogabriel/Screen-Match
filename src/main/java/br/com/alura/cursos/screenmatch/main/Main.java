@@ -23,12 +23,12 @@ public class Main implements IBuscador {
         exibeMenuPrincipal();
     }
 
-    public String exibeMensagem(String mensagem) {
+    private String exibeMensagem(String mensagem) {
         System.out.print(mensagem);
         return input.nextLine().replaceAll(" ", "+");
     }
 
-    public Series retornaSerie() {
+    private Series retornaSerie() {
         var busca = exibeMensagem("Digite o nome da série que você quer procurar: ");
         var endereco = URL_BASE + busca + API_KEY;
 
@@ -36,8 +36,11 @@ public class Main implements IBuscador {
         return new Series(informacoes);
     }
 
-    public void exibeMenuPrincipal() {
-        System.out.println("""
+    private void exibeMenuPrincipal() {
+        var opcao = 1;
+
+        while (opcao != 0) {
+            System.out.println("""
                 
                 - - - - - - - - - - - - - -
                 0 - SAIR DO PROGRAMA
@@ -46,28 +49,29 @@ public class Main implements IBuscador {
                 2 - BUSCAR EPISÓDIOS
                 - - - - - - - - - - - - - -
                 """);
-        System.out.print("Selecione uma opção: ");
-        var opcao = input.nextInt();
-        input.nextLine();
+            System.out.print("Selecione uma opção: ");
+            opcao = input.nextInt();
+            input.nextLine();
 
-        switch (opcao) {
-            case 0:
-                System.out.println("PROGRAMA ENCERRADO.");
-                break;
-            case 1:
-                var serie = retornaSerie();
-                System.out.println(serie);
-                break;
-            case 2:
-                exibeEpisodios();
-                break;
-            default:
-                System.out.println("OPÇÃO INVÁLIDA, TENTE NOVAMENTE!");
-                break;
+            switch (opcao) {
+                case 0:
+                    System.out.println("PROGRAMA ENCERRADO.");
+                    break;
+                case 1:
+                    var serie = retornaSerie();
+                    System.out.println(serie);
+                    break;
+                case 2:
+                    exibeEpisodios();
+                    break;
+                default:
+                    System.out.println("OPÇÃO INVÁLIDA, TENTE NOVAMENTE!");
+                    break;
+            }
         }
     }
 
-    public void exibeEpisodios() {
+    private void exibeEpisodios() {
         List<Temporadas> listaDeTemporadas = new ArrayList<>();
         var i = 1;
 
@@ -86,11 +90,14 @@ public class Main implements IBuscador {
         exibeMenuEpisodios(listaDeTemporadas);
     }
 
-    public void exibeMenuEpisodios(List<Temporadas> listaDeTemporadas) {
-        System.out.println("""
+    private void exibeMenuEpisodios(List<Temporadas> listaDeTemporadas) {
+        var opcao = 1;
+
+        while (opcao != 0) {
+            System.out.println("""
                 
                 - - - - - - - - - - - - - -
-                0 - SAIR DO PROGRAMA 
+                0 - SAIR DO MENU DE EPISÓDIOS 
                 
                 1 - EXIBIR MAIORES AVALIAÇÕES
                 2 - EXIBIR EPISÓDIOS A PARTIR DE UMA CERTA DATA
@@ -98,37 +105,38 @@ public class Main implements IBuscador {
                 4 - PROCURAR EPISÓDIO POR TRECHO DO NOME
                 - - - - - - - - - - - - - -
                 """);
-        System.out.print("Selecione uma opção: ");
-        var opcao = input.nextInt();
-        input.nextLine();
+            System.out.print("Selecione uma opção: ");
+            opcao = input.nextInt();
+            input.nextLine();
 
-        switch (opcao) {
-            case 1:
-                exibeMaioresAvaliacoes(listaDeTemporadas);
-                break;
-            case 2:
-                exibePartindoDaData(listaDeTemporadas);
-                break;
-            case 3:
-                exibeInformacaoAdicional(listaDeTemporadas);
-                break;
-            case 4:
-                exibeTrechoDoNome(listaDeTemporadas);
-                break;
-            default:
-                System.out.println("OPÇÃO INVÁLIDA, TENTE NOVAMENTE!");
-                break;
+            switch (opcao) {
+                case 1:
+                    exibeMaioresAvaliacoes(listaDeTemporadas);
+                    break;
+                case 2:
+                    exibePartindoDaData(listaDeTemporadas);
+                    break;
+                case 3:
+                    exibeInformacaoAdicional(listaDeTemporadas);
+                    break;
+                case 4:
+                    exibeTrechoDoNome(listaDeTemporadas);
+                    break;
+                default:
+                    System.out.println("OPÇÃO INVÁLIDA, TENTE NOVAMENTE!");
+                    break;
+            }
         }
     }
 
-    public List<Episodios> retornaEpisodios(List<Temporadas> listaDeTemporadas) {
+    private List<Episodios> retornaEpisodios(List<Temporadas> listaDeTemporadas) {
         return listaDeTemporadas.stream()
                 .flatMap(t -> t.getEpisodios().stream()
                         .map(e -> new Episodios(t.getTemporada(), e)))
                 .collect(Collectors.toList());
     }
 
-    public void exibeMaioresAvaliacoes(List<Temporadas> listaDeTemporadas) {
+    private void exibeMaioresAvaliacoes(List<Temporadas> listaDeTemporadas) {
         System.out.println("- TOP 10 EPISÓDIOS COM MAIORES AVALIAÇÕES - \n");
 
         var listaDeEpisodios = retornaEpisodios(listaDeTemporadas);
@@ -139,7 +147,7 @@ public class Main implements IBuscador {
                 .forEach(System.out::println);
     }
 
-    public void exibePartindoDaData(List<Temporadas> listaDeTemporadas) {
+    private void exibePartindoDaData(List<Temporadas> listaDeTemporadas) {
         System.out.print("A partir de que data você quer procurar? (Insira o dia, mês e ano, respectivamente) ");
         var data = input.nextLine().split(" ");
         System.out.println();
@@ -160,7 +168,7 @@ public class Main implements IBuscador {
                         (T%d E%d) %s - DATA DE LANÇAMENTO: %s""".formatted(e.getTemporada(), e.getNumero(), e.getTitulo(), e.getDataDeLancamento().format(formato))));
     }
 
-    public void exibeInformacaoAdicional(List<Temporadas> listaDeTemporadas) {
+    private void exibeInformacaoAdicional(List<Temporadas> listaDeTemporadas) {
         var listaDeEpisodios = retornaEpisodios(listaDeTemporadas);
 
         DoubleSummaryStatistics est = listaDeEpisodios.stream()
@@ -176,7 +184,7 @@ public class Main implements IBuscador {
                 PIOR NOTA: %.1f""".formatted(est.getAverage(), est.getCount(), est.getMax(), est.getMin()));
     }
 
-    public void exibeTrechoDoNome(List<Temporadas> listaDeTemporadas) {
+    private void exibeTrechoDoNome(List<Temporadas> listaDeTemporadas) {
         var trecho = exibeMensagem("Digite um trecho do título de um episódio: ");
 
         var listaDeEpisodios = retornaEpisodios(listaDeTemporadas);
