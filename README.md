@@ -10,6 +10,7 @@ Esse projeto simula um serviço de streaming de filmes e séries, que **exibem s
 
 > Esse projeto utiliza da <a href = "https://www.omdbapi.com/"> API da "OMDb", </a> que permite uma **pesquisa mais precisa e "real"** dos filmes e séries 
 > - Utilizando agora da **Spring Framework** e da **biblioteca JSON "Jackson"**, o projeto apresenta conceitos de **lambdas e streams** para gerar fluxos de dados
+> - O projeto agora também utiliza da <a href = "https://mymemory.translated.net/"> API da "MyMemory", </a> uma API que **traduz a sinopse vinda da "OMDb"**
 
 ## 💻 Tecnologias Utilizadas
 `Trabalhado durante o curso:`
