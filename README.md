@@ -18,26 +18,7 @@ Esse projeto simula um serviço de streaming de filmes e séries, que **exibem s
 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-plain.svg" height = "40" alt = "Ícone Java"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" height = "40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" height = "40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-plain.svg" height = "40"/> 
 
-## 🛠️ Como executar o programa (Java)
-
-- Passo 1: Baixe o ZIP do projeto ***(escolha a versão em "Releases" ou apenas clique em "Code")*** e descompacte a pasta
-<img src = "img/Passo0_1.jpg">
-<img src = "img/Passo0_2.jpg">
-
-- Passo 2: Abra o projeto utilizando a <a href = "https://www.jetbrains.com/pt-br/idea/">IDE do Intellij</a> e clique em **"Setup SDK"**
-<img src = "img/Passo1.5.jpg">
-<img src = "img/Passo1.jpg">
-
-- Passo 3: Clique em **"Download JDK"**
-<img src = "img/Passo2.jpg">
-
-- Passo 4: Instale a versão mais recente (ou, em caso de problemas, ***instale a versão demonstrada na imagem***)
-<img src = "img/Passo3.jpg">
-
-- Passo 5: Após a instalação, procure a classe principal e execute o programa
-<img src = "img/Passo4.jpg">
-
-## 🚧 Como executar o programa (Postgres)
+## 🛠️ Como executar o programa 
 
 * Passo 1: Instale <a href = "https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">a versão mais recente do Postgres</a>
 
@@ -46,12 +27,29 @@ Esse projeto simula um serviço de streaming de filmes e séries, que **exibem s
 <img src = "img/Passo1.1.jpg">
 <img src = "img/Passo1.2.jpg">
 
-- Passo 3: Abra a aplicação e **dentro de *src/main,* copie o nome do banco de dados *(e mude a senha, caso tenha alterado)***
+- Passo 3: Baixe o ZIP do projeto ***(escolha a versão em "Releases" ou apenas clique em "Code")*** e descompacte a pasta
+<img src = "img/Passo0_1.jpg">
+<img src = "img/Passo0_2.jpg">
+
+- Passo 4: Abra o projeto utilizando a <a href = "https://www.jetbrains.com/pt-br/idea/">IDE do Intellij</a> e clique em **"Setup SDK"**
+<img src = "img/Passo1.5.jpg">
+<img src = "img/Passo1.jpg">
+
+- Passo 5: Abra a aplicação e **dentro de *src/main,* copie o nome do banco de dados *(e mude a senha, caso tenha alterado)***
 <img src = "img/Passo1.6.jpg">
 
-* Passo 4: Abrindo o **Postgres**, clique com o botão direito nos "databases" e crie um novo banco de dados **com o nome copiado anteriormente**
+* Passo 6: Abrindo o **Postgres**, clique com o botão direito nos "databases" e crie um novo banco de dados **com o nome copiado anteriormente**
 <img src = "img/Passo1.3.jpg">
 <img src = "img/Passo1.4.jpg">
+
+- Passo 7: Clique em **"Download JDK"**
+<img src = "img/Passo2.jpg">
+
+- Passo 8: Instale a versão mais recente (ou, em caso de problemas, ***instale a versão demonstrada na imagem***)
+<img src = "img/Passo3.jpg">
+
+- Passo 9: Após a instalação, procure a classe principal e execute o programa
+<img src = "img/Passo4.jpg">
 
 ## 🏅 Certificado de Conclusão 
 
