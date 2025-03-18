@@ -1,21 +1,31 @@
 package br.com.alura.cursos.screenmatch.model;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.*;
-import java.util.stream.Collectors;
 
-public class Episodios {
+@Entity
+@Table(name = "episodios")
+public class Episodio {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private Integer temporada;
     private String titulo;
     private Integer numero;
     private LocalDate dataDeLancamento;
     private double avaliacao;
 
+    @Transient
     private DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    public Episodios(Integer temporada, DadosDoEpisodio rEpisodio) {
+    @ManyToOne
+    private Serie serie;
+
+    public Episodio(Integer temporada, DadosDoEpisodio rEpisodio) {
         this.temporada = temporada;
         this.titulo = rEpisodio.titulo();
         this.numero = rEpisodio.numeroEpisodio();
@@ -33,7 +43,11 @@ public class Episodios {
         }
     }
 
-    public Episodios() {
+    public Episodio() {
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public Integer getTemporada() {
@@ -54,6 +68,38 @@ public class Episodios {
 
     public double getAvaliacao() {
         return avaliacao;
+    }
+
+    public Serie getSerie() {
+        return serie;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setTemporada(Integer temporada) {
+        this.temporada = temporada;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
+    public void setDataDeLancamento(LocalDate dataDeLancamento) {
+        this.dataDeLancamento = dataDeLancamento;
+    }
+
+    public void setAvaliacao(double avaliacao) {
+        this.avaliacao = avaliacao;
+    }
+
+    public void setSerie(Serie serie) {
+        this.serie = serie;
     }
 
     @Override
