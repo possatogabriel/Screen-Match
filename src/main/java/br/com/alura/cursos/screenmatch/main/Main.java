@@ -42,6 +42,8 @@ public class Main implements IBuscador {
             System.out.println("""
                 
                 -*-*-*-*-*-*-*-*-*-*-*-*-*-
+                        SCREEN-MATCH
+                
                 0 - SAIR DO PROGRAMA
                 
                 1 - BUSCAR SÉRIES
