@@ -25,7 +25,7 @@ public class Episodio {
     @ManyToOne
     private Serie serie;
 
-    public Episodio(Integer temporada, DadosDoEpisodio rEpisodio) {
+    public Episodio(Integer temporada, EpisodioDadosAPI rEpisodio) {
         this.temporada = temporada;
         this.titulo = rEpisodio.titulo();
         this.numero = rEpisodio.numeroEpisodio();

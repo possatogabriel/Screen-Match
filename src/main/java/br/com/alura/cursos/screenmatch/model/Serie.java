@@ -33,7 +33,7 @@ public class Serie {
     @OneToMany(mappedBy = "serie", cascade = CascadeType.ALL)
     private List<Episodio> episodios = new ArrayList<>();
 
-    public Serie(DadosDaSerie rSerie) {
+    public Serie(SerieDadosAPI rSerie) {
         this.titulo = rSerie.titulo();
         this.anoDeLancamento = rSerie.anoDeLancamento();
         this.totalDeTemporadas = rSerie.totalTemporadas();

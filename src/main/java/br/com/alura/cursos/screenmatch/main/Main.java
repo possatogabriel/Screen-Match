@@ -113,7 +113,7 @@ public class Main implements IBuscador {
         var busca = exibeMensagem("Digite o nome da série que você quer procurar: ");
         var endereco = URL_BASE + busca.replaceAll(" ", "+") + API_KEY;
 
-        var informacoes = retornaInformacao(endereco, DadosDaSerie.class);
+        var informacoes = retornaInformacao(endereco, SerieDadosAPI.class);
 
         var serie = new Serie(informacoes);
         repositorio.save(serie);
@@ -128,7 +128,7 @@ public class Main implements IBuscador {
 
         for (var i = 1; i <= serie.getTotalDeTemporadas(); i++) {
             var endereco = URL_BASE + serie.getTitulo().replaceAll(" ", "+") + TEMPORADA + i + API_KEY;
-            var informacoes = retornaInformacao(endereco, DadosDaTemporada.class);
+            var informacoes = retornaInformacao(endereco, TemporadaDadosAPI.class);
 
             var temporada = new Temporada(informacoes);
             listaDeTemporadas.add(temporada);

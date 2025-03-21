@@ -6,9 +6,9 @@ import java.util.List;
 public class Temporada {
     private String nomeSerie;
     private Integer temporada;
-    private List<DadosDoEpisodio> episodios = new ArrayList<>();
+    private List<EpisodioDadosAPI> episodios = new ArrayList<>();
 
-    public Temporada(DadosDaTemporada rTemporada) {
+    public Temporada(TemporadaDadosAPI rTemporada) {
         this.nomeSerie = rTemporada.nomeSerie();
         this.temporada = rTemporada.numeroTemporada();
         this.episodios = rTemporada.episodiosTemporada();
@@ -25,7 +25,7 @@ public class Temporada {
         return temporada;
     }
 
-    public List<DadosDoEpisodio> getEpisodios() {
+    public List<EpisodioDadosAPI> getEpisodios() {
         return episodios;
     }
 
@@ -37,7 +37,7 @@ public class Temporada {
         this.temporada = temporada;
     }
 
-    public void setEpisodios(List<DadosDoEpisodio> episodios) {
+    public void setEpisodios(List<EpisodioDadosAPI> episodios) {
         this.episodios = episodios;
     }
 
