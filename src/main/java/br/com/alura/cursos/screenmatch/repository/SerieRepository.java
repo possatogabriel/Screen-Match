@@ -11,6 +11,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface SerieRepository extends JpaRepository<Serie, Long> {
+    @Query("SELECT s FROM Serie s WHERE s.id = :id")
+    Serie achaPorID(Long id);
+
     @Query("SELECT s FROM Serie s WHERE s.titulo ILIKE %:tituloDaSerie%")
     Optional<Serie> achaPorTitulo(String tituloDaSerie);
 
@@ -34,4 +37,10 @@ public interface SerieRepository extends JpaRepository<Serie, Long> {
 
     @Query("SELECT e FROM Serie s JOIN s.episodios e WHERE s = :serieEncontrada AND e.dataDeLancamento >= :dataBuscada")
     List<Episodio> achaEpisodiosPorData(Serie serieEncontrada, LocalDate dataBuscada);
+
+    @Query("SELECT s FROM Serie s JOIN s.episodios e GROUP BY s ORDER BY max(e.dataDeLancamento) DESC")
+    List<Serie> achaSeriePorDataDeLancamento();
+
+    @Query("SELECT e FROM Serie s JOIN s.episodios e WHERE s.id = :id AND e.temporada = :numeroTemporada")
+    List<Episodio> achaEpisodiosPorTemporada(Long id, Long numeroTemporada);
 }

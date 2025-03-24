@@ -10,16 +10,15 @@ body {
     /* Defina a altura como 100vh para ocupar toda a tela */
 }
 
-
-.ficha img {
+main img {
     margin: 0 3em 2em 0;
 }
 
-.ficha-descricao {
+#descricao {
     display: flex;
 }
 
-.ficha-descricao div {
+#descricao div {
     display: flex;
     flex-direction: column;
     gap: 3em;
@@ -42,13 +41,6 @@ p {
     font-size: 22px;
 }
 
-select,
-option {
-    font-size: 24px;
-    padding: 0 1em;
-    margin-bottom: 1em;
-}
-
 select {
     border-radius: 24px;
     border: none;
@@ -56,9 +48,14 @@ select {
     width: 10%;
 }
 
-@media screen and (max-width: 900px) {
+select, option {
+    font-size: 24px;
+    padding: 0 1em;
+    margin-bottom: 1em;
+}
 
-    .ficha-descricao,
+@media screen and (max-width: 900px) {
+    #descricao,
     .episodios-lista {
         display: block;
     }

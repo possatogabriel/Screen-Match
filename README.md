@@ -9,14 +9,24 @@ Projeto trabalhado durante a primeira e a segunda formação de Java na Alura
 Esse projeto simula um serviço de streaming de filmes e séries, que **exibem suas respectivas informações (nome do título, ano de lançamento, duração, nota...)**
 
 > Esse projeto utiliza da <a href = "https://www.omdbapi.com/">API da "OMDb"</a>, que permite uma **pesquisa mais precisa e "real"** dos filmes e séries 
-> - Utilizando agora da **biblioteca JSON "Jackson"**, o projeto apresenta conceitos de **lambdas e streams** para gerar fluxos de dados
-> - O projeto agora também utiliza da <a href = "https://mymemory.translated.net/">API da "MyMemory"</a>, uma API que **traduz a sinopse vinda da "OMDb"**
-> - Adicionalmente, o projeto apresenta **conexão com banco de dados Postgres e consultas utilizando Spring Data JPA** 
+> * Utilizando agora da **biblioteca JSON "Jackson"**, o projeto apresenta conceitos de **lambdas e streams** para gerar fluxos de dados
+> * O projeto agora também utiliza da <a href = "https://mymemory.translated.net/">API da "MyMemory"</a>, uma API que **traduz a sinopse vinda da "OMDb"**
+> * Adicionalmente, o projeto apresenta **conexão com banco de dados Postgres e consultas utilizando Spring Data JPA** 
+> * Agora, também, o projeto apresenta **uma aplicação front-end (utilizando do Spring Web)** 
+>   * Em adição a isso, foram feitas algumas **alterações opcionais às páginas,** como: **página de "Categorias" exibe o seu título de acordo com a categoria,** melhor organização do código, diferentes links de redirecionamento...
 
 ## 💻 Tecnologias Utilizadas
 `Trabalhado durante o curso:`
 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-plain.svg" height = "40" alt = "Ícone Java"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" height = "40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" height = "40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-plain.svg" height = "40"/> 
+
+`Modificado para novas implementações OPCIONAIS:`
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" height = "40" alt = "Ícone HTML"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" height = "40" alt = "Ícone CSS"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" height = "40" alt = "Ícone Java"/> 
+
+`Desenvolvido anteriormente pela Alura:`
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" height = "40" alt = "Ícone HTML"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" height = "40" alt = "Ícone CSS"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" height = "40" alt = "Ícone Java"/> 
 
 ## 🛠️ Como executar o programa 
 
@@ -35,20 +45,27 @@ Esse projeto simula um serviço de streaming de filmes e séries, que **exibem s
 <img src = "img/Passo1.5.jpg">
 <img src = "img/Passo1.jpg">
 
-- Passo 5: Abra a aplicação e **dentro de *src/main,* copie o nome do banco de dados *(e mude a senha, caso tenha alterado)***
+- Passo 5: Clique em **"Download JDK"**
+<img src = "img/Passo2.jpg">
+
+- Passo 6: Instale a versão mais recente (ou, em caso de problemas, ***instale a versão demonstrada na imagem***)
+<img src = "img/Passo3.jpg">
+
+- Passo 7: Agora, dentro de ***src/main/resources/application.properties,*** copie o nome do banco de dados *(e mude a senha, caso tenha alterado)*
 <img src = "img/Passo1.6.jpg">
 
-* Passo 6: Abrindo o **Postgres**, clique com o botão direito nos "databases" e crie um novo banco de dados **com o nome copiado anteriormente**
+* Passo 8: Abrindo o **Postgres**, **insira a senha** e, clicando com o botão direito nos "databases", crie um novo banco de dados **com o nome copiado anteriormente**
+<img src = "img/Passo12.jpg">
 <img src = "img/Passo1.3.jpg">
 <img src = "img/Passo1.4.jpg">
 
-- Passo 7: Clique em **"Download JDK"**
-<img src = "img/Passo2.jpg">
+- Passo 9: Após isso, abra o projeto com o <a href = "https://code.visualstudio.com/">Visual Studio Code</a> e **instale a extensão do "Live Preview"**
+<img src = "img/Passo10.jpg">
 
-- Passo 8: Instale a versão mais recente (ou, em caso de problemas, ***instale a versão demonstrada na imagem***)
-<img src = "img/Passo3.jpg">
+- Passo 10: Abra o **"index.html"** com o Live Preview *(demonstração na imagem)*
+<img src = "img/Passo11.jpg">
 
-- Passo 9: Após a instalação, procure a classe principal e execute o programa
+- Passo 11: Após isso, volte ao Intellij e **procure a classe principal para executar o programa**
 <img src = "img/Passo4.jpg">
 
 ## 🏅 Certificado de Conclusão 

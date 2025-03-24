@@ -8,8 +8,6 @@ const elementos = {
 };
 
 // Função para criar a lista de filmes
-
-// Função para criar a lista de filmes
 function criarListaFilmes(elemento, dados) {
     // Verifique se há um elemento <ul> dentro da seção
     const ulExistente = elemento.querySelector('ul');
@@ -23,7 +21,7 @@ function criarListaFilmes(elemento, dados) {
     ul.className = 'lista';
     const listaHTML = dados.map((filme) => `
         <li>
-            <a href="/detalhes.html?id=${filme.id}">
+            <a href="/Front-End__Screenmatch/detalhes.html?id=${filme.id}">
                 <img src="${filme.poster}" alt="${filme.titulo}">
             </a>
         </li>
@@ -62,6 +60,9 @@ categoriaSelect.addEventListener('change', function () {
         // Faça uma solicitação para o endpoint com a categoria selecionada
         getDados(`/series/categoria/${categoriaSelecionada}`)
             .then(data => {
+                let categoriaNome = categoriaSelecionada[0].toUpperCase() + categoriaSelecionada.substring(1);
+                categoria.innerHTML = `<h2> ${categoriaNome} no Screen-Match </h2>`; 
+
                 criarListaFilmes(categoria, data);
             })
             .catch(error => {
