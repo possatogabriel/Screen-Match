@@ -81,12 +81,20 @@ public class Main implements IBuscador {
         var informacoes = retornaInformacao(endereco, SerieDadosAPI.class);
 
         var serie = new Serie(informacoes);
+        perguntaFrase(serie);
         var episodios = retornaEpisodios(retornaTemporadas(serie));
-
         serie.setEpisodios(episodios);
-        repositorio.save(serie);
 
+        repositorio.save(serie);
         return serie;
+    }
+
+    private void perguntaFrase(Serie serie) {
+        var frase = exibeMensagem("Digite uma frase icônica da série: ");
+        serie.setFrase(frase);
+
+        var personagem = exibeMensagem("Digite o personagem que disse essa frase: ");
+        serie.setPersonagem(personagem);
     }
 
     private List<Temporada> retornaTemporadas(Serie serie) {

@@ -5,6 +5,8 @@ import br.com.alura.cursos.screenmatch.model.Categoria;
 public record SerieDTO(Long id,
                        String titulo,
                        String anoDeLancamento,
+                       String frase,
+                       String personagem,
                        Integer totalDeTemporadas,
                        Categoria genero,
                        String atores,

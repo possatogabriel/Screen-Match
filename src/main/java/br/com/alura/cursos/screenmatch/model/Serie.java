@@ -15,6 +15,9 @@ public class Serie {
     @Column(name = "nomeDaSerie", unique = true)
     private String titulo;
 
+    private String personagem;
+    private String frase;
+
     private String anoDeLancamento;
     private Integer totalDeTemporadas;
 
@@ -54,6 +57,22 @@ public class Serie {
 
     public String getTitulo() {
         return titulo;
+    }
+
+    public String getPersonagem() {
+        return personagem;
+    }
+
+    public void setPersonagem(String personagem) {
+        this.personagem = personagem;
+    }
+
+    public String getFrase() {
+        return frase;
+    }
+
+    public void setFrase(String frase) {
+        this.frase = frase;
     }
 
     public String getAnoDeLancamento() {

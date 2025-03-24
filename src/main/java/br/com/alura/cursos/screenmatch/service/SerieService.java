@@ -20,7 +20,7 @@ public class SerieService {
 
     private List<SerieDTO> converteDados(List<Serie> series) {
         return series.stream()
-                .map(s -> new SerieDTO(s.getId(), s.getTitulo(), s.getAnoDeLancamento(), s.getTotalDeTemporadas(), s.getGenero(), s.getAtores(), s.getPoster(), s.getSinopse(), s.getAvaliacaoIMDB(), s.getVotosIMDB()))
+                .map(s -> new SerieDTO(s.getId(), s.getTitulo(), s.getAnoDeLancamento(), s.getFrase(), s.getPersonagem(), s.getTotalDeTemporadas(), s.getGenero(), s.getAtores(), s.getPoster(), s.getSinopse(), s.getAvaliacaoIMDB(), s.getVotosIMDB()))
                 .collect(Collectors.toList());
     }
 
@@ -42,7 +42,7 @@ public class SerieService {
         if (serie.isPresent()) {
             Serie s = serie.get();
 
-            return new SerieDTO(s.getId(), s.getTitulo(), s.getAnoDeLancamento(), s.getTotalDeTemporadas(), s.getGenero(), s.getAtores(), s.getPoster(), s.getSinopse(), s.getAvaliacaoIMDB(), s.getVotosIMDB());
+            return new SerieDTO(s.getId(), s.getTitulo(), s.getAnoDeLancamento(), s.getFrase(), s.getPersonagem(), s.getTotalDeTemporadas(), s.getGenero(), s.getAtores(), s.getPoster(), s.getSinopse(), s.getAvaliacaoIMDB(), s.getVotosIMDB());
         }
         return null;
     }
@@ -80,5 +80,16 @@ public class SerieService {
         return repositorio.achaMelhoresEpisodios(serie).stream()
                 .map(e -> new EpisodioDTO(e.getTemporada(), e.getTitulo(), e.getNumero(), e.getDataDeLancamento(), e.getAvaliacao()))
                 .collect(Collectors.toList());
+    }
+
+    public SerieDTO obtemFrase() {
+        Optional<Serie> serie = repositorio.achaPorFrase();
+
+        if (serie.isPresent()) {
+            Serie s = serie.get();
+
+            return new SerieDTO(s.getId(), s.getTitulo(), s.getAnoDeLancamento(), s.getFrase(), s.getPersonagem(), s.getTotalDeTemporadas(), s.getGenero(), s.getAtores(), s.getPoster(), s.getSinopse(), s.getAvaliacaoIMDB(), s.getVotosIMDB());
+        }
+        return null;
     }
 }

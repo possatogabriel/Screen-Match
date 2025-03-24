@@ -13,7 +13,7 @@ Esse projeto simula um serviço de streaming de filmes e séries, que **exibem s
 > * O projeto agora também utiliza da <a href = "https://mymemory.translated.net/">API da "MyMemory"</a>, uma API que **traduz a sinopse vinda da "OMDb"**
 > * Adicionalmente, o projeto apresenta **conexão com banco de dados Postgres e consultas utilizando Spring Data JPA** 
 > * Agora, também, o projeto apresenta **uma aplicação front-end (utilizando do Spring Web)** 
->   * Em adição a isso, foram feitas algumas **alterações opcionais às páginas,** como: **página de "Categorias" exibe o seu título de acordo com a categoria,** melhor organização do código, diferentes links de redirecionamento...
+>   * Em adição a isso, foram feitas algumas **alterações opcionais às páginas,** como: **nova página com frases icônicas das séries, páginas de "Categorias" que exibem o seu título de acordo com a categoria,** melhor organização do código, diferentes links de redirecionamento...
 
 ## 💻 Tecnologias Utilizadas
 `Trabalhado durante o curso:`

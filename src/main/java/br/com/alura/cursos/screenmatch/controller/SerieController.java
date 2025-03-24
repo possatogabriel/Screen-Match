@@ -56,4 +56,9 @@ public class SerieController {
     public List<EpisodioDTO> obtemTop5Episodios(@PathVariable Long id) {
         return servico.obtemTop5Episodios(id);
     }
+
+    @GetMapping("/frases")
+    public SerieDTO obtemFrase() {
+        return servico.obtemFrase();
+    }
 }
