@@ -1,8 +1,10 @@
+import possatogabriel.com.github.screenmatch.model.Movie;
+
 void main() {
     Movie myMovie = new Movie();
-    myMovie.name = "Dune: Part Three";
-    myMovie.releaseYear = 2026;
-    myMovie.durationMin = 140;
+    myMovie.setName("Dune: Part Three");
+    myMovie.setReleaseYear(2026);
+    myMovie.setDurationMin(140);
 
     myMovie.rate(8);
     myMovie.rate(5);
